@@ -1,9 +1,6 @@
 #Application Configuration
 server:
   port: 8999
-  error:
-    include-message: always
-    include-binding-errors: always
 
 spring:
   cloud:
@@ -11,21 +8,27 @@ spring:
       discovery:
         locator:
           enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
       routes:
         - id: backoffice-catalog
-          uri: lb://backoffice-catalog
+          uri: lb://backoffice-catalog:5001
           predicates:
             - Path=/backoffice/api/v1/catalog/**
         - id: backoffice-shop
-          uri: lb://backoffice-shop
+          uri: lb://backoffice-shop:5000
           predicates:
             - Path=/backoffice/api/v1/shop/**
         - id: backoffice-firebase
-          uri: lb://backoffice-firebase
+          uri: lb://backoffice-firebase:8000
           predicates:
             - Path=/backoffice/api/v1/messaging/**
         - id: backoffice-device
-          uri: lb://backoffice-device
+          uri: lb://backoffice-device:5002
           predicates:
             - Path=/backoffice/api/v1/device/**
 
