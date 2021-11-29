@@ -17,6 +17,7 @@ spring:
     hibernate:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
+    open-in-view: false
 
 logging:
   pattern:
