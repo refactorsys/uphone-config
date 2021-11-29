@@ -15,19 +15,19 @@ spring:
         - id: backoffice-catalog
           uri: lb://backoffice-catalog
           predicates:
-            - Path=/catalog/**
+            - Path=/backoffice/api/v1/catalog/**
         - id: backoffice-shop
           uri: lb://backoffice-shop
           predicates:
-            - Path=/shop/**
+            - Path=/backoffice/api/v1/shop/**
         - id: backoffice-firebase
           uri: lb://backoffice-firebase
           predicates:
-            - Path=/messaging/**
+            - Path=/backoffice/api/v1/messaging/**
         - id: backoffice-device
           uri: lb://backoffice-device
           predicates:
-            - Path=/device/**
+            - Path=/backoffice/api/v1/device/**
 
 eureka:
   client:
