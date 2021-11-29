@@ -1,0 +1,35 @@
+#Application Configuration
+server:
+  port: 8999
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: backoffice-catalog
+          uri: lb://backoffice-catalog
+          predicates:
+            - Path=/catalog/**
+        - id: backoffice-shop
+          uri: lb://backoffice-shop
+          predicates:
+            - Path=/shop/**
+        - id: backoffice-firebase
+          uri: lb://backoffice-firebase
+          predicates:
+            - Path=/messaging/**
+        - id: backoffice-device
+          uri: lb://backoffice-device
+          predicates:
+            - Path=/device/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
