@@ -16,7 +16,7 @@ spring:
             - GET
       routes:
         - id: backoffice-catalog
-          uri: lb://backoffice-catalog:5001
+          uri: lb://backoffice-catalog
           predicates:
             - Path=/backoffice/api/v1/catalog/**
           filters:
