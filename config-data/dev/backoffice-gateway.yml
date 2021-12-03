@@ -19,18 +19,26 @@ spring:
           uri: lb://backoffice-catalog:5001
           predicates:
             - Path=/backoffice/api/v1/catalog/**
+          filters:
+            - RewritePath=/backoffice/api/v1/catalog/*, /
         - id: backoffice-shop
-          uri: lb://backoffice-shop:5000
+          uri: lb://backoffice-shop
           predicates:
             - Path=/backoffice/api/v1/shop/**
+          filters:
+            - RewritePath=/backoffice/api/v1/shop/*, /
         - id: backoffice-firebase
-          uri: lb://backoffice-firebase:8000
+          uri: lb://backoffice-firebase
           predicates:
             - Path=/backoffice/api/v1/messaging/**
+          filters:
+            - RewritePath=/backoffice/api/v1/messaging/*, /
         - id: backoffice-device
-          uri: lb://backoffice-device:5002
+          uri: lb://backoffice-device
           predicates:
             - Path=/backoffice/api/v1/device/**
+          filters:
+            - RewritePath=/backoffice/api/v1/device/*, /
 
 eureka:
   client:
