@@ -18,30 +18,30 @@ spring:
             - PUT
             - DELETE
       routes:
-      - id: backoffice-catalog
+      - id: catalog-service
         uri: lb://backoffice-catalog
         predicates:
-          - Path=/backoffice/api/v1/catalog/**
-        filters:
-          - RewritePath=/backoffice/api/v1/catalog/*, /
-      - id: backoffice-shop
+        - Path=/backoffice/api/v1/catalog/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/catalog/*, /
+      - id: shop-service
         uri: lb://backoffice-shop
         predicates:
-          - Path=/backoffice/api/v1/shop/**
-        filters:
-          - RewritePath=/backoffice/api/v1/shop/*, /
-      - id: backoffice-firebase
+        - Path=/backoffice/api/v1/shop/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/shop/*, /
+      - id: firebase-service
         uri: lb://backoffice-firebase
         predicates:
-          - Path=/backoffice/api/v1/messaging/**
-        filters:
-          - RewritePath=/backoffice/api/v1/messaging/*, /
-      - id: backoffice-device
+        - Path=/backoffice/api/v1/messaging/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/messaging/*, /
+      - id: device-service
         uri: lb://backoffice-device
         predicates:
-          - Path=/backoffice/api/v1/device/**
-        filters:
-          - RewritePath=/backoffice/api/v1/device/*, /
+        - Path=/backoffice/api/v1/device/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/device/*, /
 
 eureka:
   client:
