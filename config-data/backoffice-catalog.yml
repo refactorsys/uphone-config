@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 5002
+  port: 5001
   error:
     include-message: always
     include-binding-errors: always
@@ -8,9 +8,12 @@ server:
 spring:
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://uphone-db.cwhkndug0tzd.us-east-1.rds.amazonaws.com:3306/uphone-db?autoReconnect=true
-    username: admin
-    password: Uphone2021
+    url: jdbc:mariadb://localhost:3306/uphone-db?autoReconnect=true
+    #url: jdbc:mariadb://uphone-db.cwhkndug0tzd.us-east-1.rds.amazonaws.com:3306/uphone-db?autoReconnect=true
+    username: root
+    #username: admin
+    password:
+    #password: Uphone2021
 
   jpa:
     show-sql: on
