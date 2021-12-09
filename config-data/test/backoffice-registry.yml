@@ -1,10 +1,10 @@
 #Application Configuration
 server:
-  port: 8099
+  port: ${EUREKA_PORT}
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${EUREKA_HOSTNAME}
   client:
     registerWithEureka: false
     fetchRegistry: false
