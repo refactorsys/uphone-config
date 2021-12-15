@@ -30,12 +30,16 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka
 
-Feign:
-  hystrix:
-    enabled: true
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+        
+url:
+  cliente: http://backoffice-shop/backoffice/api/v1/shop/cliente
+  dispositivo: http://backoffice-catalog/backoffice/api/v1/catalog/dispositivo
+  distribuidor: http://backoffice-shop/backoffice/api/v1/shop/distribuidor
+  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  notificacion: http://backoffice-catalog/backoffice/api/v1/catalog/notificacion
+  parametro: http://backoffice-catalog/backoffice/api/v1/catalog/parametro
