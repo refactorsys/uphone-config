@@ -12,7 +12,7 @@ spring:
     #url: jdbc:mariadb://uphone-db.cwhkndug0tzd.us-east-1.rds.amazonaws.com:3306/uphone-db?autoReconnect=true
     username: root
     #username: admin
-    password:
+    password: Uphone2021
     #password: Uphone2021
 
   jpa:
