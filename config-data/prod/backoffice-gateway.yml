@@ -1,0 +1,49 @@
+#Application Configuration
+server:
+  port: 8999
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+      routes:
+      - id: catalog-service
+        uri: lb://backoffice-catalog
+        predicates:
+        - Path=/backoffice/api/v1/catalog/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/catalog/*, /
+      - id: shop-service
+        uri: lb://backoffice-shop
+        predicates:
+        - Path=/backoffice/api/v1/shop/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/shop/*, /
+      - id: firebase-service
+        uri: lb://backoffice-firebase
+        predicates:
+        - Path=/backoffice/api/v1/messaging/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/messaging/*, /
+      - id: device-service
+        uri: lb://backoffice-device
+        predicates:
+        - Path=/backoffice/api/v1/device/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/device/*, /
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka

@@ -1,0 +1,41 @@
+#Application Configuration
+server:
+  port: 5002
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+  jpa:
+    show-sql: on
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MariaDBDialect
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+url:
+  #cliente: http://backoffice-shop-test.us-east-2.elasticbeanstalk.com:5000/backoffice/api/v1/shop/cliente
+  #dispositivo: http://backoffice-catalog-test.us-east-2.elasticbeanstalk.com:5001/backoffice/api/v1/catalog/dispositivo
+  #distribuidor: http://backoffice-shop-test.us-east-2.elasticbeanstalk.com:5000/backoffice/api/v1/shop/distribuidor
+  messaging: http://backoffice-firebase-prod.us-east-1.elasticbeanstalk.com:8000/backoffice/api/v1/messaging
+  #notificacion: http://backoffice-catalog-test.us-east-2.elasticbeanstalk.com:5001/backoffice/api/v1/catalog/notificacion
+  #parametro: http://backoffice-catalog-test.us-east-2.elasticbeanstalk.com:5001/backoffice/api/v1/catalog/parametro

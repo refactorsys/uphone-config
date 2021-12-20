@@ -1,0 +1,11 @@
+#Application Configuration
+server:
+  port: 8000
+  error:
+    include-message: always
+    include-binding-errors: always
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
