@@ -37,5 +37,4 @@ management:
         include: "*"
         
 url:
-  dispositivo: http://backoffice-catalog/backoffice/api/v1/catalog/dispositivo
   messaging: http://backoffice-firebase/backoffice/api/v1/messaging
