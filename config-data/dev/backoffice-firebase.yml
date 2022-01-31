@@ -10,4 +10,4 @@ eureka:
     hostname: ${EUREKA_HOSTNAME}
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${eureka.instance.hostname}:${server.port}/eureka
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${eureka.instance.hostname}:${EUREKA_PORT}/eureka
