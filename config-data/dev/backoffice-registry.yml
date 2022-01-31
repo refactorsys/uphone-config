@@ -1,12 +1,12 @@
 #Application Configuration
 server:
-  port: 8099
+  port: ${EUREKA_PORT}
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${EUREKA_HOSTNAME}
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${eureka.instance.hostname}:${server.port}/eureka
