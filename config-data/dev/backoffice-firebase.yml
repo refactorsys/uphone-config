@@ -6,8 +6,6 @@ server:
     include-binding-errors: always
 
 eureka:
-  instance:
-    hostname: ${EUREKA_HOSTNAME}
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${eureka.instance.hostname}:${EUREKA_PORT}/eureka
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
