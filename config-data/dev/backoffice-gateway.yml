@@ -8,15 +8,6 @@ spring:
       discovery:
         locator:
           enabled: true
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-            - GET
-            - POST
-            - PUT
-            - DELETE
       routes:
       - id: firebase-service
         uri: lb://backoffice-firebase
@@ -28,6 +19,7 @@ spring:
         uri: lb://backoffice-device
         predicates:
         - Path=/backoffice/api/**
+        - Path=/api/auth/**
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
