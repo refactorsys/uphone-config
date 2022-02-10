@@ -16,7 +16,8 @@ spring:
         #filters:
         #- RewritePath=/backoffice/api/v1/messaging/*, /
       - id: device-service
-        uri: lb://backoffice-device
+        #uri: lb://backoffice-device
+        uri: https://awseb-AWSEB-11LCMAOBWA9DF-68323834.us-east-1.elb.amazonaws.com
         predicates:
         - Path=/backoffice/api/**,/api/auth/**,/api/test/**
         #filters:
