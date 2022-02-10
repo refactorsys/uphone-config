@@ -2,7 +2,7 @@
 server:
   port: 5002
   error:
-    # include-message: always
+    include-message: always
     include-binding-errors: always
 
 spring:
