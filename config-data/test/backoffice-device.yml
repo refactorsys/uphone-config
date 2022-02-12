@@ -8,7 +8,7 @@ server:
 spring:
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
   jpa:
