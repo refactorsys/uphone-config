@@ -19,7 +19,7 @@ spring:
         # uri: lb://backoffice-device
         uri: http://awseb-AWSEB-1XCS8KHDYYNTO-12809596.us-east-1.elb.amazonaws.com
         predicates:
-        - Path=/backoffice/api/**
+        - Path=/backoffice/api/**,/api/auth/**,/api/test/**
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
