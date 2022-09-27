@@ -18,6 +18,26 @@ spring:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
 
+#Application Configuration
+server:
+  port: 8100
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+
+  jpa:
+    show-sql: on
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MariaDBDialect
+
   mail:
 		host: ${MAIL_HOSTNAME}
 		port: ${MAIL_PORT}
@@ -29,6 +49,22 @@ spring:
 			connectiontimeout:5000
 			timeout:5000
 			writetimeout:5000
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 
 logging:
   pattern:
