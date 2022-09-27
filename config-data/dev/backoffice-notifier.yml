@@ -18,11 +18,11 @@ spring:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
     
-  mail:
-	  host: ${MAIL_HOSTNAME}
-	  port: ${MAIL_PORT}
-	  username: ${MAIL_USER}
-	  password: ${MAIL_PASSWORD}
+   mail:
+    host: ${MAIL_HOSTNAME}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
 
 logging:
   pattern:
