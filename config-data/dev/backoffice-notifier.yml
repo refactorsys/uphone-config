@@ -19,10 +19,18 @@ spring:
     database-platform: org.hibernate.dialect.MariaDBDialect
     
    mail:
-    host: ${MAIL_HOSTNAME}
-    port: ${MAIL_PORT}
-    username: ${MAIL_USER}
-    password: ${MAIL_PASSWORD}
+      host: ${MAIL_HOSTNAME}
+      port: ${MAIL_PORT}
+      username: ${MAIL_USER}
+      password: ${MAIL_PASSWORD}
+      properties:
+	       mail:
+	          smtp:
+		           auth:true
+	             connectiontimeout:5000
+	             timeout:5000
+	             writetimeout:5000
+			         starttls.enable:true
 
 logging:
   pattern:
