@@ -35,4 +35,4 @@ management:
         
 url:
   messaging: http://backoffice-firebase/backoffice/api/v1/messaging
-  notifier: http://backoffice-notifier/backoffice/api/v1/notificacion
+  notifier: http://backoffice-notifier/backoffice/api/v1/notify
