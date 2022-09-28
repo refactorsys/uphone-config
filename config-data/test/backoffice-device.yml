@@ -11,8 +11,9 @@ spring:
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
+
   jpa:
-    show-sql: off
+    show-sql: false
     hibernate:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
@@ -31,6 +32,7 @@ management:
     web:
       exposure:
         include: "*"
-
+        
 url:
   messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  notifier: http://backoffice-notifier/backoffice/api/v1/notify
