@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 5002
+  port: 8100
   error:
     include-message: always
     include-binding-errors: always
@@ -13,10 +13,22 @@ spring:
     password: ${RDS_PASSWORD}
 
   jpa:
-    show-sql: false
+    show-sql: on
     hibernate:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
+
+  mail:
+    host: ${MAIL_HOSTNAME}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
+    properties.mail.smtp:
+      auth:true
+      starttls.enable:true
+      connectiontimeout:5000
+      timeout:5000
+      writetimeout:5000
 
 logging:
   pattern:
@@ -32,7 +44,3 @@ management:
     web:
       exposure:
         include: "*"
-        
-url:
-  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
-  notifier: http://backoffice-notifier/backoffice/api/v1/notify
