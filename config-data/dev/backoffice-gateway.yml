@@ -26,7 +26,7 @@ spring:
       - id: erp-service
         uri: lb://backoffice-erp
         predicates:
-        - Path=/backoffice/api/**
+        - Path=/backoffice/api/v1/erp/**,/backoffice/api/v2/erp/**
       - id: console-service
         uri: lb://backoffice-console
         predicates:
