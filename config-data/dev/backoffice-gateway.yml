@@ -23,6 +23,10 @@ spring:
         uri: lb://backoffice-device
         predicates:
         - Path=/backoffice/api/**
+      - id: erp-service
+        uri: lb://backoffice-erp
+        predicates:
+        - Path=/backoffice/api/**
       - id: console-service
         uri: lb://backoffice-console
         predicates:
