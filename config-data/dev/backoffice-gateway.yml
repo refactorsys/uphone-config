@@ -15,12 +15,18 @@ spring:
         - Path=/backoffice/api/v1/messaging/**
         #filters:
         #- RewritePath=/backoffice/api/v1/messaging/*, /
+      - id: security-service
+        uri: lb://backoffice-security
+        predicates:
+        - Path=/backoffice/api/**,/api/auth/**,/api/test/**
       - id: device-service
         uri: lb://backoffice-device
         predicates:
-        - Path=/backoffice/api/**,/api/auth/**,/api/test/**
-        #filters:
-        #- RewritePath=/backoffice/api/v1/device/*, /
+        - Path=/backoffice/api/**
+      - id: console-service
+        uri: lb://backoffice-console
+        predicates:
+        - Path=/backoffice/api/** 
 
 eureka:
   client:
