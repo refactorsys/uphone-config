@@ -9,26 +9,20 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: firebase-service
-          uri: lb://backoffice-firebase
-          predicates:
-            - Path=/backoffice/api/v1/messaging/**
-          #filters:
-          #- RewritePath=/backoffice/api/v1/messaging/*, /
         - id: security-service
           uri: lb://backoffice-security
           predicates:
             - Path=/api/auth/**,/api/test/**
-        - id: device-service
-          uri: lb://backoffice-device
-          predicates:
-            - Path=/backoffice/api/v1/device/**,/backoffice/api/v2/device/**
-          filters:
-            - AuthFilter
         - id: erp-service
           uri: lb://backoffice-erp
           predicates:
             - Path=/backoffice/api/v1/erp/**,/backoffice/api/v2/erp/**
+          filters:
+            - AuthFilter
+        - id: device-service
+          uri: lb://backoffice-device
+          predicates:
+            - Path=/backoffice/api/v1/device/**,/backoffice/api/v2/device/**
           filters:
             - AuthFilter
         - id: console-service
@@ -37,6 +31,10 @@ spring:
             - Path=/backoffice/api/v1/web/**,/backoffice/api/v2/web/**
           filters:
             - AuthFilter
+        - id: firebase-service
+          uri: lb://backoffice-firebase
+          predicates:
+            - Path=/backoffice/api/v1/messaging/**
 
 eureka:
   client:
