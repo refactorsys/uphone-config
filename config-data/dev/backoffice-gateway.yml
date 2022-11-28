@@ -28,19 +28,19 @@ spring:
           predicates:
             - Path=/backoffice/api/v1/erp/**,/backoffice/api/v2/erp/**
           filters:
-            - AuthFilter
+            - AuthenticationFilter
         - id: device-service
           uri: lb://backoffice-device
           predicates:
             - Path=/backoffice/api/v1/device/**,/backoffice/api/v2/device/**
           filters:
-            - AuthFilter
+            - AuthenticationFilter
         - id: console-service
           uri: lb://backoffice-console
           predicates:
             - Path=/backoffice/api/v1/web/**,/backoffice/api/v2/web/**
           filters:
-            - AuthFilter
+            - AuthenticationFilter
         - id: firebase-service
           uri: lb://backoffice-firebase
           predicates:
