@@ -3,20 +3,12 @@ server:
   port: 8999
 
 spring:
+  application.name: backoffice-gateway
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-            - GET
-            - POST
-            - PUT
-            - DELETE
       routes:
       - id: firebase-service
         uri: lb://backoffice-firebase
