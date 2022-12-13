@@ -27,7 +27,7 @@ spring:
       - id: device-service
         uri: lb://backoffice-device
         predicates:
-        - Path=/backoffice/api/**
+        - Path=/backoffice/api/**,/api/auth/**,/api/test/**
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
