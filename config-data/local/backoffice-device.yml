@@ -2,21 +2,18 @@
 server:
   port: 5002
   error:
-    # include-message: always
+    include-message: always
     include-binding-errors: always
 
 spring:
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/uphone-db?autoReconnect=true
-    #url: jdbc:mariadb://uphone-db.cwhkndug0tzd.us-east-1.rds.amazonaws.com:3306/uphone-db?autoReconnect=true
-    username: root
-    #username: admin
-    password:
-    #password: Uphone2021
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
 
   jpa:
-    show-sql: on
+    show-sql: false
     hibernate:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
@@ -28,14 +25,14 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka
-
-Feign:
-  hystrix:
-    enabled: true
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+url:
+  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  notifier: http://backoffice-notifier/backoffice/api/v1/notify
