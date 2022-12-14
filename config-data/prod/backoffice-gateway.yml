@@ -16,8 +16,8 @@ spring:
         #filters:
         #- RewritePath=/backoffice/api/v1/messaging/*, /
       - id: device-service
-        #uri: lb://backoffice-device
-        uri: https://device.uphone-ec.com
+        uri: lb://backoffice-device
+        #uri: https://device.uphone-ec.com
         predicates:
         - Path=/backoffice/api/**,/api/auth/**,/api/test/**
         #filters:
