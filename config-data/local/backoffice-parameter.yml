@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 5055
+  port: 5003
   error:
     include-message: always
     include-binding-errors: always
