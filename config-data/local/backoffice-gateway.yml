@@ -23,6 +23,10 @@ spring:
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
+      - id: parameter-service
+        uri: lb://backoffice-parameter
+        predicates:
+        - Path=/backoffice/api/v1/parameter/**
 eureka:
   client:
     serviceUrl:
