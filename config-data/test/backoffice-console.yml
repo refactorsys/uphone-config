@@ -25,7 +25,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+      defaultZone: https://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
 
 management:
   endpoints:
