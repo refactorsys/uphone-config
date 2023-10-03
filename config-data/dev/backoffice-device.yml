@@ -34,5 +34,9 @@ management:
         include: "*"
 
 url:
-  #messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
   notifier: http://backoffice-notifier/backoffice/api/v1/notify
+
+api:
+  backoffice-firebase:
+    url: lb://backoffice-firebase/backoffice/api/v1/messaging
