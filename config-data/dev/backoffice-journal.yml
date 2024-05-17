@@ -18,7 +18,17 @@ spring:
       ddl-auto: validate
     database-platform: org.hibernate.dialect.MariaDBDialect
 
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
