@@ -42,3 +42,6 @@ api:
     url: lb://backoffice-firebase/backoffice/api/v1/messaging
   backoffice-parameter:
     url: lb://backoffice-parameter/backoffice/api/v1/parameter/find
+  backoffice-journal:
+    url: lb://backoffice-journal/backoffice/api/v1/journal
+    
