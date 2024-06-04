@@ -32,4 +32,8 @@ management:
     web:
       exposure:
         include: "*"
+
+api:
+  backoffice-journal:
+    url: lb://backoffice-journal/backoffice/api/v1/journal
         
