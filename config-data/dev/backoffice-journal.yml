@@ -10,6 +10,10 @@ spring:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
 
 logging:
   pattern:
