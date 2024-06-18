@@ -46,3 +46,7 @@ api:
     url: lb://backoffice-journal/backoffice/api/v1/journal
   backoffice-contacts:
     url: lb://backoffice-contacts/backoffice/api/v1/contacts
+
+aws:
+  accessKeyId: ${AWS_ACCESS_KEY}
+  secretKey: ${AWS_SECRET_KEY}
