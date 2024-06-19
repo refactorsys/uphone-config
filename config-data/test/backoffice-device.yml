@@ -44,4 +44,8 @@ api:
     url: lb://backoffice-parameter/backoffice/api/v1/parameter/find
   backoffice-journal:
     url: lb://backoffice-journal/backoffice/api/v1/journal
+
+aws:
+  accessKeyId: ${AWS_ACCESS_KEY}
+  secretKey: ${AWS_SECRET_KEY}
     
