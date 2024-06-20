@@ -36,4 +36,6 @@ management:
 api:
   backoffice-journal:
     url: lb://backoffice-journal/backoffice/api/v1/journal
+  backoffice-contacts:
+    url: lb://backoffice-contacts/backoffice/api/v1/contacts
         
