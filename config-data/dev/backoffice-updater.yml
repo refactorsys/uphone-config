@@ -5,16 +5,7 @@ server:
     include-message: always
     include-binding-errors: always
 
-spring:
-  r2dbc:
-    url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
-    username: ${RDS_USERNAME}
-    password: ${RDS_PASSWORD}
-  data:
-    r2dbc:
-      repositories:
-        enabled: true
-        
+spring:        
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
