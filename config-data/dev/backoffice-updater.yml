@@ -11,6 +11,12 @@ spring:
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 4
+      idle-timeout: 60000  # 1 minuto
+      max-lifetime: 900000  # 15 minutos
+      connection-timeout: 30000  # 30 segundos
 
   jpa:
     show-sql: false
