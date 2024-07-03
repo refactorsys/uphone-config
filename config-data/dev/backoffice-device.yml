@@ -47,6 +47,6 @@ api:
   backoffice-contacts:
     url: lb://backoffice-contacts/backoffice/api/v1/contacts
 
-aws:
-  accessKeyId: ${AWS_ACCESS_KEY}
-  secretKey: ${AWS_SECRET_KEY}
+#aws:
+  #accessKeyId: ${AWS_ACCESS_KEY}
+  #secretKey: ${AWS_SECRET_KEY}
