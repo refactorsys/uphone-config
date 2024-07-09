@@ -36,4 +36,6 @@ management:
 api:
   backoffice-contacts:
     url: lb://backoffice-contacts/backoffice/api/v1/contacts
+  backoffice-firebase:
+    url: lb://backoffice-firebase/backoffice/api/v1/messaging
         
