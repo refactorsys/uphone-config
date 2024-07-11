@@ -38,9 +38,7 @@ management:
     web:
       exposure:
         include: "*"
-url:
-  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
-
+        
 api:
   backoffice-firebase:
     url: lb://backoffice-firebase/backoffice/api/v1/messaging
