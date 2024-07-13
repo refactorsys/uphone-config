@@ -44,4 +44,5 @@ api:
     url: lb://backoffice-firebase/backoffice/api/v1/messaging
 
 url:
-  messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  #messaging: http://backoffice-firebase/backoffice/api/v1/messaging
+  messaging: ${FIREBASE_URL}
