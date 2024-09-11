@@ -6,6 +6,7 @@ server:
     include-binding-errors: always
 
 spring:
+
   r2dbc:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
