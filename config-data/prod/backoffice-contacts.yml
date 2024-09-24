@@ -11,6 +11,10 @@ spring:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
+    pool:
+      max-size: 20
+      max-acquire-time: 5000
+      max-idle-time: 30000
   data:
     r2dbc:
       repositories:
