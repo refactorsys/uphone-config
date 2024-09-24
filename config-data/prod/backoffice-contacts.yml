@@ -12,9 +12,9 @@ spring:
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
     pool:
-      max-size: 20
-      max-acquire-time: 5000
-      max-idle-time: 30000
+      max-size: 50
+      max-acquire-time: 30000
+      max-idle-time: 60000
   data:
     r2dbc:
       repositories:
