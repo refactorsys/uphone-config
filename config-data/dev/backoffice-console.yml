@@ -11,6 +11,11 @@ spring:
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
+  webflux:
+    session:
+      timeout: 120s
+    netty:
+      idle-timeout: 120s
 
   jpa:
     show-sql: false
