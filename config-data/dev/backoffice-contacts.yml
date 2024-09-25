@@ -12,6 +12,8 @@ spring:
   webflux:
     session:
       timeout: 120s
+    netty:
+      idle-timeout: 120s
 
   r2dbc:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
