@@ -9,6 +9,9 @@ spring:
   mvc:
     async:
       request-timeout: 60000
+  webflux:
+    session:
+      timeout: 120s
 
   r2dbc:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
