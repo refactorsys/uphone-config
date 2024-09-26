@@ -13,7 +13,7 @@ spring:
     password: ${RDS_PASSWORD}
   mvc:
     async:
-      request-timeout: 60000
+      request-timeout: 120000
   webflux:
     session:
       timeout: 120s
