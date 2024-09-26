@@ -6,6 +6,8 @@ server:
     include-binding-errors: always
 
 spring:
+  codec:
+    max-in-memory-size: 16MB
   mvc:
     async:
       request-timeout: 120000
