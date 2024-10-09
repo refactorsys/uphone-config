@@ -6,7 +6,16 @@ server:
     include-binding-errors: always
 
 spring:
-
+  codec:
+    max-in-memory-size: 16MB
+  mvc:
+    async:
+      request-timeout: 120000
+  webflux:
+    session:
+      timeout: 120s
+    netty:
+      idle-timeout: 120s
   r2dbc:
     url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
     username: ${RDS_USERNAME}
