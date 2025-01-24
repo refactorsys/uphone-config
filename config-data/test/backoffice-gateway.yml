@@ -1,4 +1,4 @@
-#Application Configuration
+ #Application Configuration
 server:
   port: 8999
 
@@ -14,11 +14,18 @@ spring:
         uri: lb://backoffice-firebase
         predicates:
         - Path=/backoffice/api/v1/messaging/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/messaging/*, /
       - id: device-service
         uri: lb://backoffice-device
         predicates:
         - Path=/backoffice/api/**,/api/auth/**,/api/test/**
         #- Path=/backoffice/api/v1/device/**
+        #filters:
+        #- RewritePath=/backoffice/api/v1/device/*, /
+      httpclient:
+        connect-timeout: 30000
+        response-timeout: 2m
 eureka:
   client:
     serviceUrl:
