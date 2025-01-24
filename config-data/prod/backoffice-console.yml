@@ -6,6 +6,11 @@ server:
     include-binding-errors: always
 
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
@@ -21,6 +26,7 @@ spring:
       timeout: 120s
     netty:
       idle-timeout: 120s
+
   jpa:
     show-sql: false
     hibernate:
@@ -43,10 +49,10 @@ management:
         include: "*"
 
 api:
-  backoffice-contacts:
-    url: lb://backoffice-contacts/backoffice/api/v1/contacts
-  backoffice-journal:
-    url: lb://backoffice-journal/backoffice/api/v1/journal
   backoffice-firebase:
     url: lb://backoffice-firebase/backoffice/api/v1/messaging
+  backoffice-journal:
+    url: lb://backoffice-journal/backoffice/api/v1/journal
+  backoffice-contacts:
+    url: lb://backoffice-contacts/backoffice/api/v1/contacts
         
