@@ -23,6 +23,9 @@ spring:
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
+      httpclient:
+        connect-timeout: 30000
+        response-timeout: 2m
 eureka:
   client:
     serviceUrl:
