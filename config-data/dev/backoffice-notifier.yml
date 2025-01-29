@@ -30,14 +30,6 @@ spring:
       timeout:5000
       writetimeout:5000
 
-twilio:
-  account:
-    sid: ${TWILIO_ACCOUNT_SID}
-  auth:
-    token: ${TWILIO_AUTH_TOKEN}
-  phone:
-    number: ${TWILIO_PHONE_NUMBER}
-
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
