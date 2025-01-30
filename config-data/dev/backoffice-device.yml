@@ -46,6 +46,8 @@ api:
     url: lb://backoffice-journal/backoffice/api/v1/journal
   backoffice-contacts:
     url: lb://backoffice-contacts/backoffice/api/v1/contacts
+  backoffice-notifier:
+    url: lb://backoffice-notifier/backoffice/api/v1/notify
 
 #aws:
   #accessKeyId: ${AWS_ACCESS_KEY}
