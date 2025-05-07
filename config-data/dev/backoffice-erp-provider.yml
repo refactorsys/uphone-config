@@ -28,6 +28,10 @@ eureka:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
         
 api:
-  backoffice-firebase:
-    url: lb://backoffice-firebase/backoffice/api/v1/messaging
+  erp-sofya:
+    base-url: https://test-erp.credituphone.com:8091/com.sofya.java.uphone.backend.apiRest-1.1/uphoneAPI
+    phone-path: /contratoAPI/updatePhone
+    token-path: /auth/login
+    client-id: f2a1ed52710d4533bde25be6da03b6e3
+    client-secret: 9876543210zyxwvutsrqponmlkjihgfedcba
 
