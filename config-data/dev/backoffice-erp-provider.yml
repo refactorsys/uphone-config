@@ -29,9 +29,14 @@ eureka:
         
 api:
   erp-sofya:
-    base-url: https://test-erp.credituphone.com:8091/com.sofya.java.uphone.backend.apiRest-1.1/uphoneAPI
-    phone-path: /contratoAPI/updatePhone
-    token-path: /auth/login
-    client-id: f2a1ed52710d4533bde25be6da03b6e3
-    client-secret: 9876543210zyxwvutsrqponmlkjihgfedcba
+    #base-url: https://test-erp.credituphone.com:8091/com.sofya.java.uphone.backend.apiRest-1.1/uphoneAPI
+    #phone-path: /contratoAPI/updatePhone
+    #token-path: /auth/login
+    #client-id: f2a1ed52710d4533bde25be6da03b6e3
+    #client-secret: 9876543210zyxwvutsrqponmlkjihgfedcba
+    base-url: ${ERP_SOFYA_URL}
+    phone-path: ${ERP_SOFYA_PHONE_PATH}
+    token-path: ${ERP_SOFYA_TOKEN_PATH}
+    client-id: ${ERP_SOFYA_CLIENT_ID}
+    client-secret: ${ERP_SOFYA_SECRET_ID}
 
