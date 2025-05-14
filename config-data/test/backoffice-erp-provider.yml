@@ -32,6 +32,8 @@ api:
     base-url: ${ERP_SOFYA_URL}
     phone-path: ${ERP_SOFYA_PHONE_PATH}
     token-path: ${ERP_SOFYA_TOKEN_PATH}
+    biometric-path: ${ERP_SOFYA_BIOMETRIC_PATH}
+    contract-state-path: ${ERP_SOFYA_CONTRACT_STATE_PATH}
     client-id: ${ERP_SOFYA_CLIENT_ID}
     client-secret: ${ERP_SOFYA_SECRET_ID}
 
