@@ -1,0 +1,49 @@
+server:
+  port: 5050
+
+spring:
+  application:
+    name: uphone-recognito-holder
+
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none # o update, validate, create-drop según tu caso
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    show-sql: false
+
+  devtools:
+    restart:
+      enable: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+metrics:
+  validation-percent: ${VALIDATION_PERCENT}
+
+#EurekaClient
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+api:
+  erp-provider:
+    base_url: ${ERP_PROVIDER_BASE_URL}
+    face: ${ERP_PROVIDER_FACE_PATH}
+    result: ${ERP_PROVIDER_RESULT_PATH}
+    msg_result: ${MSG_RESULT}
