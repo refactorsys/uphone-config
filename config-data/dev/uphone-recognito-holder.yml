@@ -1,10 +1,8 @@
+#Application Configuration
 server:
   port: 5050
 
 spring:
-  application:
-    name: uphone-recognito-holder
-
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
