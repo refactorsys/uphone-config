@@ -4,12 +4,12 @@ server:
 
 spring:
   datasource:
-    holder_db:
+    holder-db:
       driverClassName: org.mariadb.jdbc.Driver
       url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
       username: ${RDS_USERNAME}
       password: ${RDS_PASSWORD}
-    uphone_db:
+    uphone-db:
       driverClassName: org.mariadb.jdbc.Driver
       url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB1_NAME}
       username: ${RDS_USERNAME}
