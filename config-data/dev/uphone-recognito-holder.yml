@@ -45,5 +45,4 @@ api:
     result: ${ERP_PROVIDER_RESULT_PATH}
     msg_result: ${MSG_RESULT}
   uphone-erp:
-    base_url: ${BASE_UPHONE_ERP}
-    item-dispositivo: ${BASE_UPHONE_ITEMDISPOSITIVO_PATH}
+    url: lb://uphone-recognito-holder/backoffice/api/v2/erp
