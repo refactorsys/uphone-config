@@ -35,8 +35,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
 
 api:
   erp-provider:
@@ -46,3 +46,4 @@ api:
     msg_result: ${MSG_RESULT}
   uphone-erp:
     base_url: ${BASE_UPHONE_ERP}
+    item-dispositivo: ${BASE_UPHONE_ITEMDISPOSITIVO_PATH}
