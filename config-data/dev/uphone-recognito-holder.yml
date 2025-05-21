@@ -4,18 +4,10 @@ server:
 
 spring:
   datasource:
-    holderdb:
-      driverClassName: org.mariadb.jdbc.Driver
-      jdbc-url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
-      username: ${RDS_USERNAME}
-      password: ${RDS_PASSWORD}
-    uphonedb:
-      driverClassName: org.mariadb.jdbc.Driver
-      jdbc-url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
-      username: ${RDS_USERNAME}
-      password: ${RDS_PASSWORD}
-
-
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none # o update, validate, create-drop según tu caso
@@ -52,3 +44,5 @@ api:
     face: ${ERP_PROVIDER_FACE_PATH}
     result: ${ERP_PROVIDER_RESULT_PATH}
     msg_result: ${MSG_RESULT}
+  uphone-erp:
+    base_url: ${BASE_UPHONE_ERP}
