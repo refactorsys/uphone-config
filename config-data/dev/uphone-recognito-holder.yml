@@ -29,6 +29,7 @@ management:
 
 metrics:
   validation-percent: ${VALIDATION_PERCENT}
+  validation-ratio : ${VALIDATION_RATIO}
 
 #EurekaClient
 eureka:
