@@ -23,6 +23,10 @@ spring:
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
+      - id: uphone-iaaa
+        uri: lb://uphone-iaaa
+        predicates:
+        - Path=/api/v1/management/**,/signer/api/**
       httpclient:
         connect-timeout: 30000
         response-timeout: 2m
