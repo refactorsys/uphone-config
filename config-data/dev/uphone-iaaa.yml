@@ -35,3 +35,7 @@ eureka:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+api:
+  uphone-erp:
+    url: lb://backoffice-erp/backoffice/api/v2/erp
