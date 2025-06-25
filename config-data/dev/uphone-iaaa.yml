@@ -30,7 +30,9 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+      defaultZone: http://${EUREKA_USER:root}:${EUREKA_PASSWORD:s3cr3t}@${EUREKA_HOSTNAME:localhost}:${EUREKA_PORT:8099}/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
+    hostname: localhost
 
