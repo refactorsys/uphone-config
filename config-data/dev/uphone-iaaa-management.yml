@@ -22,7 +22,8 @@ eureka:
     serviceUrl:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
       
-
+  instance:
+    prefer-ip-address: true
 
 api:
   uphone-erp:
