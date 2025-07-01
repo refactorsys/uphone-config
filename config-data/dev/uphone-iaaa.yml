@@ -33,8 +33,3 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
-  instance:
-    hostname: host.docker.internal
-    prefer-ip-address: false
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30
