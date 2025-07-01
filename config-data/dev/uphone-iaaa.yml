@@ -33,3 +33,8 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+
+api:
+  uphone-erp:
+    url: lb://backoffice-erp/backoffice/api/v2/erp
