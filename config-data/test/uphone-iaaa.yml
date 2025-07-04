@@ -1,0 +1,40 @@
+server:
+  port: 5005
+  ssl:
+    enabled: false
+    key-store: ${KEY_STORE}
+    key-store-password: ${KEY_STORE_PASSWORD}
+    key-password: ${KEY_PASSWORD}
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  profiles:
+    active: dev,test,prod
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  mvc:
+    async:
+      request-timeout: 360000
+  codec:
+    max-in-memory-size: 5MB
+#EurekaClient
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
+
+
+api:
+  uphone-erp:
+    url: lb://backoffice-erp/backoffice/api/v2/erp
