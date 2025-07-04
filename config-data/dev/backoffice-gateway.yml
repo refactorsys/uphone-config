@@ -20,6 +20,13 @@ spring:
         uri: lb://backoffice-device
         predicates:
         - Path=/backoffice/api/**,/api/auth/**,/api/test/**
+
+        - id: websocket-entregas
+        uri: lb://uphone-recognito-holder  # El nombre del microservicio que maneja WebSockets
+        predicates:
+          - Path=/ws/entregas/**
+        filters:
+            - RewritePath=/ws/entregas/(?<segment>.*), /${segment}
         #- Path=/backoffice/api/v1/device/**
         #filters:
         #- RewritePath=/backoffice/api/v1/device/*, /
