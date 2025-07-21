@@ -40,6 +40,7 @@ geocoding:
 custome: 
   label: 
     projectVersionArn: ${PROJECT_VERSION_ARN}
+    minCoincidencial: ${MIN_COINCIDENCIAL}
 
 #EurekaClient
 eureka:
