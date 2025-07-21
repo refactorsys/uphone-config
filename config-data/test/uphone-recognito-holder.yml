@@ -31,6 +31,18 @@ metrics:
   validation-percent: ${VALIDATION_PERCENT}
   validation-ratio : ${VALIDATION_RATIO}
 
+
+geocoding:
+  timeout-seconds: 10
+  service-url: "https://nominatim.openstreetmap.org"
+  user-agent: "UphoneRecognitoHolder/1.0"
+
+custome: 
+  label: 
+    projectVersionArn: ${PROJECT_VERSION_ARN}
+    minCoincidencial: ${MIN_COINCIDENCIAL}
+    tagValidation: ${TAG_VALIDATION}
+
 #EurekaClient
 eureka:
   client:
