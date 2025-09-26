@@ -57,6 +57,8 @@ api:
     face: ${ERP_PROVIDER_FACE_PATH}
     result: ${ERP_PROVIDER_RESULT_PATH}
     msg_result: ${MSG_RESULT}
+    approve: ${ERP_PROVIDER_APPROVE}
+    discard: ${ERP_PROVIDER_DISCARD} 
   uphone-erp:
     url: lb://backoffice-erp/backoffice/api/v2/erp
 
@@ -65,3 +67,4 @@ modeldecision:
   url: ${MODELDECISION_URL}
   tabledecision: ${MODELDECISION_TABLE}
   agency: ${MODELDECISION_AGENCY}
+
