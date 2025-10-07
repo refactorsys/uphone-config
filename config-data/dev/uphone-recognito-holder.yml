@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: recognito-holder
+    name: uphone-recognito-holder
   iaaa:
     base-url: http://localhost:5005
   security:
