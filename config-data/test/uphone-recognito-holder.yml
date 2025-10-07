@@ -61,10 +61,14 @@ api:
     discard: ${ERP_PROVIDER_DISCARD} 
   uphone-erp:
     url: lb://backoffice-erp/backoffice/api/v2/erp
-
+  iaaa:
+    base-url: ${IAAA_BASE_URL}
+    access-path: ${IAAA_ACCESS_PATH}
+    controller-param: ${IAAA_CONTROLLER_PARAM}
 
 modeldecision:
   url: ${MODELDECISION_URL}
   tabledecision: ${MODELDECISION_TABLE}
   agency: ${MODELDECISION_AGENCY}
+
 
