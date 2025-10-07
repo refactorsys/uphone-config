@@ -3,6 +3,12 @@ server:
   port: 5050
 
 spring:
+  application:
+    name: recognito-holder
+  iaaa:
+    base-url: lb://iaaa
+  security:
+    client-app: holder
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
