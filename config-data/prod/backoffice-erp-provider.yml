@@ -36,4 +36,6 @@ api:
     contract-state-path: ${ERP_SOFYA_CONTRACT_STATE_PATH}
     client-id: ${ERP_SOFYA_CLIENT_ID}
     client-secret: ${ERP_SOFYA_SECRET_ID}
+    approve-contract: ${ERP_SOFYA_APPROVE}
+    discard-contract: ${ERP_SOFYA_DISCARD}
 
