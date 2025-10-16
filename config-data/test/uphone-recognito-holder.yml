@@ -59,6 +59,7 @@ api:
     msg_result: ${MSG_RESULT}
     approve: ${ERP_PROVIDER_APPROVE}
     discard: ${ERP_PROVIDER_DISCARD} 
+    state: ${ERP_PROVIDER_GET_STATE}
   uphone-erp:
     url: lb://backoffice-erp/backoffice/api/v2/erp
   iaaa:
@@ -70,5 +71,6 @@ modeldecision:
   url: ${MODELDECISION_URL}
   tabledecision: ${MODELDECISION_TABLE}
   agency: ${MODELDECISION_AGENCY}
+
 
 
