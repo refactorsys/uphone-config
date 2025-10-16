@@ -38,4 +38,5 @@ api:
     client-secret: ${ERP_SOFYA_SECRET_ID}
     approve-contract: ${ERP_SOFYA_APPROVE}
     discard-contract: ${ERP_SOFYA_DISCARD}
+    contract-state: ${ERP_SOFYA_STATE}
 
