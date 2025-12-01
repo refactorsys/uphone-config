@@ -42,6 +42,8 @@ custome:
     projectVersionArn: ${PROJECT_VERSION_ARN}
     minCoincidencial: ${MIN_COINCIDENCIAL}
     tagValidation: ${TAG_VALIDATION}
+    tagFraude: ${TAG_FRAUDE}
+    minFraudeConfidence: ${MIN_FRAUDE_CONFIDENCE}
 
 #EurekaClient
 eureka:
