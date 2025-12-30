@@ -34,8 +34,8 @@ metrics:
 
 geocoding:
   timeout-seconds: 10
-  service-url: "https://nominatim.openstreetmap.org"
-  user-agent: "UphoneRecognitoHolder/1.0"
+  service-url: "https://maps.googleapis.com/maps/api/geocode/json"
+  api-key: ${GOOGLE_MAPS_API_KEY}
 
 custome: 
   label: 
