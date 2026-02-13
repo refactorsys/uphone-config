@@ -68,6 +68,8 @@ api:
     base-url: ${IAAA_BASE_URL}
     access-path: ${IAAA_ACCESS_PATH}
     controller-param: ${IAAA_CONTROLLER_PARAM}
+  parameter:
+    base_url:${PARAMETER_BASE_URL}
 
 
 modeldecision:
