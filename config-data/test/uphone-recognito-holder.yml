@@ -60,7 +60,7 @@ api:
     result: ${ERP_PROVIDER_RESULT_PATH}
     msg_result: ${MSG_RESULT}
     approve: ${ERP_PROVIDER_APPROVE}
-    discard: ${ERP_PROVIDER_DISCARD} 
+    discard: ${ERP_PROVIDER_DISCARD}
     state: ${ERP_PROVIDER_GET_STATE}
   uphone-erp:
     url: lb://backoffice-erp/backoffice/api/v2/erp
@@ -68,13 +68,11 @@ api:
     base-url: ${IAAA_BASE_URL}
     access-path: ${IAAA_ACCESS_PATH}
     controller-param: ${IAAA_CONTROLLER_PARAM}
+  parameter:
+    base_url: ${PARAMETER_BASE_URL}
+
 
 modeldecision:
   url: ${MODELDECISION_URL}
   tabledecision: ${MODELDECISION_TABLE}
   agency: ${MODELDECISION_AGENCY}
-
-
-
-
-
