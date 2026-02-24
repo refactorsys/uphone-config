@@ -7,7 +7,7 @@ server:
 
 spring:
   r2dbc:
-    url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
+    url: r2dbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true&sslMode=trust
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
   data:
@@ -17,7 +17,7 @@ spring:
         
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true
+    url: jdbc:mariadb://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}?autoReconnect=true&sslMode=trust
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
 
