@@ -46,4 +46,8 @@ api:
     url: lb://backoffice-journal/backoffice/api/v1/journal
   backoffice-contacts:
     url: lb://backoffice-contacts/backoffice/api/v1/contacts
+  backoffice-notifier:
+    url: lb://backoffice-notifier/backoffice/api/v1/notify
+  backoffice-erp-provider:
+    url: lb://backoffice-erp-provider/backoffice/api/v1/erp-provider
   
