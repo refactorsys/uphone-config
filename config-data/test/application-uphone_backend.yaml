@@ -1,0 +1,19 @@
+# Server config
+server:
+  port: ${CONFIG_PORT:5020}
+
+# Datasource config
+spring:
+  datasource:
+    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:admin123}
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+    show-sql: 'false'
+    hibernate:
+      ddl-auto: update
+  config:
+    import: optional:file:.env[.properties]       

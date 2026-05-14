@@ -1,0 +1,73 @@
+# Server Configuration
+server:
+  port: 9090
+
+# Spring Configuration
+spring:
+  application:
+    name: uphone-credito-bpm
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:uphone_creditdecision_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USER:root}
+    password: ${DB_PASS:admin}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+      write-dates-as-timestamps: false
+
+# Camunda Configuration
+camunda:
+  bpm:
+    admin-user:
+      id: ${CAMUNDA_ADMIN_ID:demo}
+      password: ${CAMUNDA_ADMIN_PASS:demo}
+    database:
+      schema-update: false
+      type: mysql
+    job-execution:
+      enabled: true
+    generic-properties:
+      properties:
+        historyTimeToLive: P1D
+    history-level: full
+
+# Logging Configuration
+logging:
+  level:
+    org.camunda.bpm.engine.jobexecutor: INFO
+    org.camunda.bpm: INFO
+
+# Business Path Config
+path:
+  apiResource:
+    v1: /api/credit/v1
+
+# External APIs Configuration
+url:
+  api:
+    credit-decision: ${CREDIT_DECISION_URL:http://localhost:9001/api/v1}
+    buro-experto: ${BURO_EXPERTO_URL:http://uphone-buro-experto-core-test.us-east-1.elasticbeanstalk.com}
+    orchestrator: ${ORCHESTRATOR_API_URL:https://orchestator-core.uphone-ec.com/api/v1/orchestrator/scrapping/demanda/execute}
+    webdatos: ${WEBDATOS_URL:http://uphone-webdatos-api-core-test-env.eba-ijvpmbuc.us-east-1.elasticbeanstalk.com/webdatos-core/api/v1}
+
+# Buro Credentials
+buroexperto:
+  user: ${BURO_USER:test}
+  password: ${BURO_PASS:6449-ndi4g}
+
+# Custom Camunda Config
+name:
+  camunda:
+    flujo: ${FLUJO_CAMUNDA_URL:flujo-uphone}
