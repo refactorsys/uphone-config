@@ -1,0 +1,69 @@
+server:
+  port: ${PORT}
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?sslMode=REQUIRED&trustServerCertificate=true&serverTimezone=UTC
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+      write-dates-as-timestamps: false
+
+# Camunda Configuration
+camunda:
+  bpm:
+    admin-user:
+      id: ${CAMUNDA_ADMIN_ID}
+      password: ${CAMUNDA_ADMIN_PASS}
+    database:
+      schema-update: false
+      type: mysql
+    job-execution:
+      enabled: true
+    generic-properties:
+      properties:
+        historyTimeToLive: P3650D
+    history-level: full
+
+# Logging Configuration
+logging:
+  level:
+    org.camunda.bpm.engine.jobexecutor: INFO
+    org.camunda.bpm: INFO
+
+# External APIs Configuration
+url:
+  api:
+    credit-decision: ${CREDIT_DECISION_URL}
+    buro-experto: ${BURO_EXPERTO_URL}
+    orchestrator: ${ORCHESTRATOR_API_URL}
+    webdatos: ${BURO_WEBDATOS_URL}
+
+# Buro Credentials
+buroexperto:
+  user: ${BURO_USER}
+  password: ${BURO_PASS}
+
+# Custom Camunda Config
+name:
+  camunda:
+    flujo: ${FLUJO_CAMUNDA_URL}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOSTNAME}:${EUREKA_PORT}/eureka
