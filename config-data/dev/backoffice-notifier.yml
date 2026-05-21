@@ -34,6 +34,13 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 
+
+sendo:
+  api:
+    url: ${SENDO_API_URL}
+    api_key: ${SENDO_API_KEY}
+    sender_id: ${SENDO_SENDER_ID}
+
 eureka:
   client:
     serviceUrl:
