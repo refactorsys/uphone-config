@@ -42,5 +42,6 @@ api:
     approve-contract: ${ERP_SOFYA_APPROVE}
     discard-contract: ${ERP_SOFYA_DISCARD}
     contract-state: ${ERP_SOFYA_STATE}
+    credit-evaluation: ${CREDIT_EVALUATION_PATH}
 
 
