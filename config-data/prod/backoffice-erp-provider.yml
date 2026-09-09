@@ -45,5 +45,5 @@ api:
     credit-evaluation: ${ERP_CREDIT_EVALUATION_PATH}
     client-webhook-id: ${ERP_SOFYA_CLIENT_WEBHOOK_ID}
     client-webhook-secret: ${ERP_SOFYA_SECRET_WEBHOOK_ID}
-    base-url-webhook: ${ERP_BASE_WEBHOOK
+    base-url-webhook: ${ERP_BASE_WEBHOOK}
 
