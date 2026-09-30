@@ -47,3 +47,17 @@ api:
     client-webhook-secret: ${ERP_SOFYA_SECRET_WEBHOOK_ID}
     base-url-webhook: ${ERP_BASE_WEBHOOK}
 
+# Módulo Vouchers / Sofya ERP
+uphone:
+  vouchers:
+    scc:
+      base-url: ${UPHONE_SCC_BASE_URL}
+    sas:
+      base-url: ${UPHONE_SAS_BASE_URL}
+    client-id: ${UPHONE_CLIENT_ID}
+    client-secret: ${UPHONE_CLIENT_SECRET}
+    cache:
+      token-ttl-seconds: ${UPHONE_TOKEN_CACHE_TTL_SECONDS}
+    http:
+      connect-timeout-ms: ${UPHONE_HTTP_CONNECT_TIMEOUT_MS}
+      read-timeout-ms: ${UPHONE_HTTP_READ_TIMEOUT_MS}
